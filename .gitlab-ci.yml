@@ -1,0 +1,18 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - run_tests
+
+build-test:       
+  stage: build
+  script:
+    - echo "Compiling the testing code and setup lib"
+    - echo "example: pip install, npm install...."
+    - pip install -r requirements.txt
+
+run-tests:
+   stage: run_tests
+   script:
+    - pytest test_scenarios.py 
+
+
+
